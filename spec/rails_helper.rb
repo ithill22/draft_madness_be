@@ -64,7 +64,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   config.include Capybara::DSL
-  config.example_statuspersister_file_path = 'spec/examples.txt'
+  config.example_status_persistence_file_path= 'spec/examples.txt'
 end
 
 VCR.configure do |config|
