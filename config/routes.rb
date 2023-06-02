@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       resource :users, only: [:create]
+      resource :leagues, only: [:create]
     end
   end
 end

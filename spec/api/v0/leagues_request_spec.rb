@@ -1,23 +1,20 @@
 require 'rails_helper'
 
-RSpec.describe 'League Requests' do
+RSpec.describe 'Leagues Requests' do
   before(:each) do
-    @user = User.create(name: 'Bernie Sanders',
-      email: 'feel.the.bernnnn@gmail.com',
-      google_id: '0123456789',
-      auth_token: 'a;skt821498435nsdioopa7123h0dfk')
     @new_params = {
       name: 'Test League',
-      draft_time: '12:00',
+      draft_time: '2000-01-01T12:00:00.000Z',
       draft_date: '2020-08-01',
       manager_id: 1
     }
+  end
   describe 'Create a new league' do
     it 'can create a league' do
       post '/api/v0/leagues', params: @new_params.to_json, headers: { 'Content-Type' => 'application/json'}
 
       expect(response).to be_successful
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(201)
 
       data = JSON.parse(response.body, symbolize_names: true)
 
