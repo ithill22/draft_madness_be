@@ -1,5 +1,5 @@
 class Api::V0::UsersController < ApplicationController
-  def create
+  def creategit 
     user = User.find_or_create_by(email: user_params[:email])
     user.update(user_params)
     render json: UserSerializer.new(user), status: 200
