@@ -8,11 +8,16 @@ RSpec.describe 'UserLeague Requests' do
       user_id: @user.id,
       league_id: @league.id
     }
+    @bad_params = {
+      league_id: @league.id,
+      user_id: ''
+    }
+    @headers = { 'Content-Type' => 'application/json' }
   end
 
   describe 'happy_path' do
     it 'can create a new user_league from params' do
-      post '/api/v0/user_leagues', params: @params.to_json, headers: { 'Content-Type' => 'application/json'}
+      post '/api/v0/user_leagues', headers: @headers, params: JSON.generate(user_league: @params)
 
       expect(response).to be_successful
       expect(response).to have_http_status(201)
@@ -36,6 +41,20 @@ RSpec.describe 'UserLeague Requests' do
 
       expect(data[:data][:attributes]).to have_key(:league_id)
       expect(data[:data][:attributes][:league_id]).to eq(@params[:league_id])
+    end
+  end
+
+  describe 'sad_path' do
+    it 'returns an error if user_id is missing' do
+      post '/api/v0/user_leagues', headers: @headers, params: JSON.generate(user_league: @bad_params)
+
+      expect(response).to_not be_successful
+      expect(response).to have_http_status(422)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(data).to be_a(Hash)
+      expect(data[:errors][:detail]).to eq("Validation failed: User can't be blank, User must exist")
     end
   end
 end
