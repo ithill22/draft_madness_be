@@ -45,7 +45,7 @@ RSpec.describe 'User Requests' do
     end
 
     it 'can find a user if they already exist' do
-      user = User.create(@new_params)
+      User.create(@new_params)
       params = {
         name: 'Bernie Sanders',
         email: 'feel.the.bernnnn@gmail.com',
