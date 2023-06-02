@@ -89,4 +89,41 @@ RSpec.describe 'Leagues Requests' do
       end
     end
   end
+
+  describe 'Send a single league' do
+    it 'can send a single league' do
+      @user_1 = User.create!(name: "John Doe", email: "john.doe@turing.edu", auth_token: "abc123", google_id: "1234567890")
+      @league_1 = League.create!(name: "League 1", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_1.id)
+      get "/api/v0/leagues/#{@league_1[:id]}"
+
+      expect(response).to be_successful
+      expect(response).to have_http_status(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json).to be_a(Hash)
+      expect(json[:data]).to be_a(Hash)
+
+      expect(json[:data]).to have_key(:type)
+      expect(json[:data][:type]).to eq('league')
+
+      expect(json[:data]).to have_key(:id)
+      expect(json[:data][:id]).to be_an(String)
+
+      expect(json[:data]).to have_key(:attributes)
+      expect(json[:data][:attributes]).to be_a(Hash)
+
+      expect(json[:data][:attributes]).to have_key(:name)
+      expect(json[:data][:attributes][:name]).to be_a(String)
+      
+      expect(json[:data][:attributes]).to have_key(:draft_time)
+      expect(json[:data][:attributes][:draft_time]).to be_a(String)
+      
+      expect(json[:data][:attributes]).to have_key(:draft_date)
+      expect(json[:data][:attributes][:draft_date]).to be_a(String)
+
+      expect(json[:data][:attributes]).to have_key(:manager_id)
+      expect(json[:data][:attributes][:manager_id]).to be_an(Integer)
+    end
+  end
 end

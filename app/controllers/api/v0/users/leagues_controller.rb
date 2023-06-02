@@ -4,4 +4,9 @@ class Api::V0::Users::LeaguesController < ApplicationController
     leagues = user.leagues
     render json: LeagueSerializer.new(leagues), status: 200
   end
+
+  def show
+    league = League.find(params[:id])
+    render json: LeagueSerializer.new(league), status: 200
+  end
 end
