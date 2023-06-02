@@ -78,5 +78,14 @@ RSpec.describe 'UserLeague Requests' do
         expect(response).to have_http_status(204)
       end
     end
+
+    describe 'sad_path' do
+      it 'returns an error if user_league_id is invalid' do
+        delete '/api/v0/user_leagues', headers: @headers, params: JSON.generate(user_league: @invalid_params)
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status(404)
+      end
+    end
   end
 end
