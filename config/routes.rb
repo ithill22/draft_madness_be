@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v0 do
       resource :users, only: [:create]
-      resource :user_leagues, only: %i[create show]
+      resource :user_leagues, only: %i[create destroy]
     end
   end
 end
