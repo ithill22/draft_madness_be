@@ -1,6 +1,7 @@
 example_id                                   | status | run_time        |
 -------------------------------------------- | ------ | --------------- |
-./spec/api/v0/leagues_request_spec.rb[1:1:1] | passed | 0.06608 seconds |
+./spec/api/v0/leagues_request_spec.rb[1:1:1] | passed | 0.06944 seconds |
+./spec/api/v0/leagues_request_spec.rb[1:2:1] | passed | 0.11897 seconds |
 ./spec/api/v0/user_request_spec.rb[1:1:1]    | passed | 0.18681 seconds |
 ./spec/api/v0/user_request_spec.rb[1:1:2]    | passed | 0.00917 seconds |
 ./spec/models/league_spec.rb[1:1:1]          | passed | 0.01489 seconds |
