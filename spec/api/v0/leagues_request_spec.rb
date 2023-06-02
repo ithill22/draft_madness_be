@@ -49,9 +49,11 @@ RSpec.describe 'Leagues Requests' do
 
       @league_1 = League.create!(name: "League 1", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_1.id)
       @league_2 = League.create!(name: "League 2", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_2.id)
+      @league_3 = League.create!(name: "League 3", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_2.id)
 
       @user_league_1 = UserLeague.create!(user_id: @user_1.id, league_id: @league_1.id)
       @user_league_2 = UserLeague.create!(user_id: @user_1.id, league_id: @league_2.id)
+      @user_league_3 = UserLeague.create!(user_id: @user_2.id, league_id: @league_3.id)
     end
     it 'can send all leagues for a user' do
       get "/api/v0/leagues", params: { user_id: @user_1.id }
@@ -124,6 +126,12 @@ RSpec.describe 'Leagues Requests' do
 
       expect(json[:data][:attributes]).to have_key(:manager_id)
       expect(json[:data][:attributes][:manager_id]).to be_an(Integer)
+    end
+  end
+
+  describe 'Update a league' do
+    it 'can update a league' do
+
     end
   end
 end
