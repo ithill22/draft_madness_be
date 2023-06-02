@@ -1,16 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'Leagues Requests' do
-  before(:each) do
-    @new_params = {
-      name: 'Test League',
-      draft_time: '2000-01-01T12:00:00.000Z',
-      draft_date: '2020-08-01',
-      manager_id: 1
-    }
-  end
   describe 'Create a new league' do
     it 'can create a league' do
+      @new_params = {
+        name: 'Test League',
+        draft_time: '2000-01-01T12:00:00.000Z',
+        draft_date: '2020-08-01',
+        manager_id: 1
+      }
       post '/api/v0/leagues', params: @new_params.to_json, headers: { 'Content-Type' => 'application/json'}
 
       expect(response).to be_successful
@@ -42,5 +40,9 @@ RSpec.describe 'Leagues Requests' do
       expect(data[:data][:attributes]).to have_key(:manager_id)
       expect(data[:data][:attributes][:manager_id]).to eq(@new_params[:manager_id])
     end
+  end
+
+  describe 'Get all leagues' do
+    it 'can get all leagues' do
   end
 end
