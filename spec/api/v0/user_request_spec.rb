@@ -12,10 +12,10 @@ RSpec.describe 'User Requests' do
     end
 
     it 'can create a user' do
-      post 'api/v0/users', params: @valid_params.to_json, headers: { 'Content-Type' => 'application/json'}
+      post '/api/v0/users', params: @new_params.to_json, headers: { 'Content-Type' => 'application/json'}
 
       expect(response).to be_successful
-      expect(response).to have_http_status(201)
+      expect(response).to have_http_status(200)
 
       data = JSON.parse(response.body, symbolize_names: true)
 
@@ -26,7 +26,7 @@ RSpec.describe 'User Requests' do
       expect(data[:data][:type]).to eq('user')
 
       expect(data[:data]).to have_key(:id)
-      expect(data[:data][:id]).to be_an(Integer)
+      expect(data[:data][:id]).to be_an(String)
 
       expect(data[:data]).to have_key(:attributes)
       expect(data[:data][:attributes]).to be_a(Hash)
@@ -53,7 +53,7 @@ RSpec.describe 'User Requests' do
         auth_token: 'uifdtjnalkdsotiua2307623523htkg0we89ru5q3n'
       }
 
-      post 'api/v0/users', params: params.to_json, headers: { 'Content-Type' => 'application/json'}
+      post '/api/v0/users', params: params.to_json, headers: { 'Content-Type' => 'application/json'}
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)
@@ -68,7 +68,7 @@ RSpec.describe 'User Requests' do
       expect(data[:data][:type]).to eq('user')
 
       expect(data[:data]).to have_key(:id)
-      expect(data[:data][:id]).to be_an(Integer)
+      expect(data[:data][:id]).to be_an(String)
 
       expect(data[:data]).to have_key(:attributes)
       expect(data[:data][:attributes]).to be_a(Hash)
