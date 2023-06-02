@@ -116,6 +116,8 @@ GEM
     irb (1.6.4)
       reline (>= 0.3.0)
     json (2.6.3)
+    jsonapi-serializer (2.2.0)
+      activesupport (>= 4.2)
     launchy (2.5.2)
       addressable (~> 2.8)
     loofah (2.21.3)
@@ -143,6 +145,8 @@ GEM
       net-protocol
     nio4r (2.5.9)
     nokogiri (1.15.2-x86_64-darwin)
+      racc (~> 1.4)
+    nokogiri (1.15.2-x86_64-linux)
       racc (~> 1.4)
     orderly (0.1.1)
       capybara (>= 1.1)
@@ -260,6 +264,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
@@ -270,6 +275,7 @@ DEPENDENCIES
   faker
   faraday
   figaro
+  jsonapi-serializer
   launchy
   orderly
   pg (~> 1.1)
