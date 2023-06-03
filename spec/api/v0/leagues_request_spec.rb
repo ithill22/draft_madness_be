@@ -94,7 +94,7 @@ RSpec.describe 'Leagues Requests' do
       expect(json).to be_a(Hash)
       expect(json[:data]).to be_an(Array)
       expect(json[:data].count).to eq(2)
-      
+
       json[:data].each do |league|
         expect(league).to have_key(:type)
         expect(league[:type]).to eq('league')
@@ -107,10 +107,10 @@ RSpec.describe 'Leagues Requests' do
 
         expect(league[:attributes]).to have_key(:name)
         expect(league[:attributes][:name]).to be_a(String)
-        
+
         expect(league[:attributes]).to have_key(:draft_time)
         expect(league[:attributes][:draft_time]).to be_a(String)
-        
+
         expect(league[:attributes]).to have_key(:draft_date)
         expect(league[:attributes][:draft_date]).to be_a(String)
 
