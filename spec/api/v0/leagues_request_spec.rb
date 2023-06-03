@@ -9,7 +9,10 @@ RSpec.describe 'Leagues Requests' do
         draft_date: '2020-08-01',
         manager_id: 1
       }
-      post '/api/v0/leagues', params: @new_params.to_json, headers: { 'Content-Type' => 'application/json'}
+
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      post '/api/v0/leagues', headers: headers, params: JSON.generate(league: @new_params)
 
       expect(response).to be_successful
       expect(response).to have_http_status(201)
@@ -131,7 +134,48 @@ RSpec.describe 'Leagues Requests' do
 
   describe 'Update a league' do
     it 'can update a league' do
+      @user_1 = User.create!(name: "John Doe", email: "john.doe@turing.edu", auth_token: "abc123", google_id: "1234567890")
+      @league_1 = League.create!(name: "League 1", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_1.id)
+      @updated_params = { name: "Super League", draft_time: "9:00 PM", draft_date: "2021-08-02", manager_id: @user_1.id }
 
+      headers = { 'CONTENT_TYPE' => 'application/json' }
+
+      patch "/api/v0/leagues/#{@league_1.id}", headers: headers, params: JSON.generate(league: @updated_params)
+
+
+      expect(response).to be_successful
+      expect(response).to have_http_status(200)
+
+      json = JSON.parse(response.body, symbolize_names: true)
+
+      expect(json).to be_a(Hash)
+      expect(json[:data]).to be_a(Hash)
+
+      expect(json[:data]).to have_key(:type)
+      expect(json[:data][:type]).to eq('league')
+
+      expect(json[:data]).to have_key(:id)
+      expect(json[:data][:id]).to be_an(String)
+
+      expect(json[:data]).to have_key(:attributes)
+      expect(json[:data][:attributes]).to be_a(Hash)
+
+      expect(json[:data][:attributes]).to have_key(:name)
+      expect(json[:data][:attributes][:name]).to eq(@updated_params[:name])
+    end
+  end
+
+  describe 'Delete a league' do
+    it 'can delete a league' do
+      @user_1 = User.create!(name: "John Doe", email: "john.doe@turing.edu", auth_token: "abc123", google_id: "1234567890")
+      @league_1 = League.create!(name: "League 1", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_1.id)
+      @league_2 = League.create!(name: "League 2", draft_time: "9:00 PM", draft_date: "2021-08-02", manager_id: @user_1.id)
+
+      delete "/api/v0/leagues/#{@league_1[:id]}"
+
+      expect(response).to be_successful
+      expect(response).to have_http_status(204)
+      expect(League.count).to eq(1)
     end
   end
 end

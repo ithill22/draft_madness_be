@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       resource :leagues, only: [:create] 
       get '/leagues', to: 'users/leagues#index'
       get '/leagues/:id', to: 'users/leagues#show', as: 'league'
+      patch '/leagues/:id', to: 'users/leagues#update', as: 'update_league'
+      delete '/leagues/:id', to: 'users/leagues#destroy', as: 'destroy_league'
     end
   end
 end
