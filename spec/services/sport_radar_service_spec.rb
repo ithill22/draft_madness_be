@@ -26,6 +26,24 @@ RSpec.describe SportRadarService do
         expect(team).to have_key(:seed)
         expect(team[:seed]).to be_a(Integer)
       end
+
+      it 'returns one team', :vcr do
+        search = SportRadarService.new.one_team('c10544de-e3bd-4776-ba2e-83df8c017fd1')
+
+        expect(search).to be_a(Hash)
+
+        expect(search).to have_key(:id)
+        expect(search[:id]).to be_a(String)
+
+        expect(search).to have_key(:name)
+        expect(search[:name]).to be_a(String)
+
+        expect(search).to have_key(:market)
+        expect(search[:market]).to be_a(String)
+
+        expect(search).to have_key(:alias)
+        expect(search[:alias]).to be_a(String)
+      end
     end
   end
 end
