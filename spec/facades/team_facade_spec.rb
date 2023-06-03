@@ -8,6 +8,7 @@ RSpec.describe TeamFacade do
 
     it 'returns all teams' do
       expect(@facade.all_teams).to be_an(Array)
+      expect(@facade.all_teams.count).to eq(68)
       expect(@facade.all_teams.first).to be_a(Team)
     end
   end
