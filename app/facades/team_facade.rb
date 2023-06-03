@@ -18,7 +18,7 @@ class TeamFacade
   def format_team_data
     teams = all_team_data[:brackets].map do |bracket|
       region = bracket[:name]
-      bracket[:participants].each do |participant|
+      bracket[:participants].map do |participant|
         {
           id: participant[:id],
           type: participant[:type],
