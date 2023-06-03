@@ -5,7 +5,7 @@ class Api::V0::UserLeaguesController < ApplicationController
   end
 
   def destroy
-    user_league = UserLeague.find(user_league_params[:user_league_id])
+    user_league = UserLeague.find(params[:id])
     user_league.destroy
   end
 

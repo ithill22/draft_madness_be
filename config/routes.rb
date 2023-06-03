@@ -5,14 +5,11 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v0 do
-
-      resource :users, only: [:create] 
-      resource :leagues, only: [:create] 
-      resource :user_leagues, only: %i[create destroy]
-      get '/leagues', to: 'users/leagues#index'
-      get '/leagues/:id', to: 'users/leagues#show', as: 'league'
-      patch '/leagues/:id', to: 'users/leagues#update', as: 'update_league'
-      delete '/leagues/:id', to: 'users/leagues#destroy', as: 'destroy_league'
+      resources :users, only: %i[create show] do
+        resources :leagues, only: %i[index], controller: 'users/leagues'
+      end
+      resources :leagues, only: %i[create show update destroy] 
+      resources :user_leagues, only: %i[create destroy]
     end
   end
 end
