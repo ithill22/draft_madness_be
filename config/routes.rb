@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       end
       resources :leagues, only: %i[create show update destroy] 
       resources :user_leagues, only: %i[create destroy]
+      resources :teams, only: %i[index]
     end
   end
 end
