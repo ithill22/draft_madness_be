@@ -9,10 +9,11 @@ RSpec.describe 'User Requests' do
         google_id: '0123456789',
         auth_token: 'a;skt821498435nsdioopa7123h0dfk'
       }
+      @headers = { 'Content-Type' => 'application/json'}
     end
 
     it 'can create a user' do
-      post '/api/v0/users', params: @new_params.to_json, headers: { 'Content-Type' => 'application/json'}
+      post '/api/v0/users', headers: @headers, params: JSON.generate(user: @new_params)
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)
@@ -45,7 +46,7 @@ RSpec.describe 'User Requests' do
     end
 
     it 'can find a user if they already exist' do
-      user = User.create(@new_params)
+      User.create(@new_params)
       params = {
         name: 'Bernie Sanders',
         email: 'feel.the.bernnnn@gmail.com',
@@ -53,7 +54,7 @@ RSpec.describe 'User Requests' do
         auth_token: 'uifdtjnalkdsotiua2307623523htkg0we89ru5q3n'
       }
 
-      post '/api/v0/users', params: params.to_json, headers: { 'Content-Type' => 'application/json'}
+      post '/api/v0/users', headers: @headers, params: JSON.generate(user: params)
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)
