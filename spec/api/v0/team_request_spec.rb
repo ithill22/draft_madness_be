@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Team Requests' do
   describe 'all teams' do
-    it 'can retrieve and return all teams' do
-      get 'api/v0/teams'
+    it 'can retrieve and return all teams', :vcr do
+      get '/api/v0/teams'
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)

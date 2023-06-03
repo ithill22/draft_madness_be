@@ -1,4 +1,4 @@
-class Api::v0::TeamsController < ApplicationController
+class Api::V0::TeamsController < ApplicationController
   def index
     teams = TeamFacade.new.all_teams
     render json: TeamSerializer.new(teams)
