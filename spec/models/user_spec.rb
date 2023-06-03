@@ -8,6 +8,5 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
-    
   end
 end
