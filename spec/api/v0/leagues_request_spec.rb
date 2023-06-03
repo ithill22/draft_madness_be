@@ -171,6 +171,8 @@ RSpec.describe 'Leagues Requests' do
       @league_1 = League.create!(name: "League 1", draft_time: "8:00 PM", draft_date: "2021-08-01", manager_id: @user_1.id)
       @league_2 = League.create!(name: "League 2", draft_time: "9:00 PM", draft_date: "2021-08-02", manager_id: @user_1.id)
 
+      expect(League.count).to eq(2)
+
       delete "/api/v0/leagues/#{@league_1[:id]}"
 
       expect(response).to be_successful
