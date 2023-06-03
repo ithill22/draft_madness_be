@@ -140,4 +140,46 @@ RSpec.describe 'User Requests' do
       expect(data[:errors][:detail]).to eq("Couldn't find User with [WHERE \"users\".\"auth_token\" = $1]")
     end
   end
+
+  describe 'can find all users' do
+    before(:each) do
+      @user1 = User.create!(name: 'Bernie Sanders', email: 'feel.the.bernnnn@gmail.com', google_id: '0123456789', auth_token: 'askt821498435nsdioopa7123h0dfk')
+      @user2 = User.create!(name: 'Sigmund Frued ', email: 'all.about.mommy@gmail.com', google_id: '9876543210', auth_token: 'a_skt821ksadjnsdio_pa712sdfafk')
+      @user3 = User.create!(name: 'Betty White', email: 'always.golden@gmail.com', google_id: '1234567890', auth_token: 'a_sktasdasdktsak_jt92sdfafk8476hdk_kasd')
+    end
+
+    it 'happy path' do
+      get '/api/v0/users'
+
+      expect(response).to be_successful
+      expect(response).to have_http_status(200)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+      expect(data).to be_a(Hash)
+      expect(data[:data]).to be_an(Array)
+      expect(data[:data].count).to eq(3)
+
+      user = data[:data].first
+      expect(user).to have_key(:type)
+      expect(user[:type]).to eq('user')
+
+      expect(user).to have_key(:id)
+      expect(user[:id]).to be_an(String)
+
+      expect(user).to have_key(:attributes)
+      expect(user[:attributes]).to be_a(Hash)
+
+      expect(user[:attributes]).to have_key(:name)
+      expect(user[:attributes][:name]).to be_a(String)
+
+      expect(user[:attributes]).to have_key(:email)
+      expect(user[:attributes][:email]).to be_a(String)
+
+      expect(user[:attributes]).to have_key(:google_id)
+      expect(user[:attributes][:google_id]).to be_a(String)
+
+      expect(user[:attributes]).to have_key(:auth_token)
+      expect(user[:attributes][:auth_token]).to be_a(String)
+    end
+  end
 end

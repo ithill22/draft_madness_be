@@ -6,6 +6,6 @@ class Api::V0::TeamsController < ApplicationController
 
   def show
     team = TeamFacade.new.one_team(params[:id])
-    render json: SingleTeamSerializer.new(team)
+    render json: TeamSerializer.new(team)
   end
 end
