@@ -2,46 +2,71 @@ require 'rails_helper'
 
 RSpec.describe 'Leagues Requests' do
   describe 'Create a new league' do
-    it 'can create a league' do
-      @new_params = {
-        name: 'Test League',
-        draft_time: '2000-01-01T12:00:00.000Z',
-        draft_date: '2020-08-01',
-        manager_id: 1
-      }
+    describe 'Happy Path' do
+      it 'can create a league' do
+        @new_params = {
+          name: 'Test League',
+          draft_time: '2000-01-01T12:00:00.000Z',
+          draft_date: '2020-08-01',
+          manager_id: 1
+        }
 
-      headers = { 'CONTENT_TYPE' => 'application/json' }
+        headers = { 'CONTENT_TYPE' => 'application/json' }
 
-      post '/api/v0/leagues', headers: headers, params: JSON.generate(league: @new_params)
+        post '/api/v0/leagues', headers: headers, params: JSON.generate(league: @new_params)
 
-      expect(response).to be_successful
-      expect(response).to have_http_status(201)
+        expect(response).to be_successful
+        expect(response).to have_http_status(201)
 
-      data = JSON.parse(response.body, symbolize_names: true)
+        data = JSON.parse(response.body, symbolize_names: true)
 
-      expect(data).to be_a(Hash)
-      expect(data[:data]).to be_a(Hash)
+        expect(data).to be_a(Hash)
+        expect(data[:data]).to be_a(Hash)
 
-      expect(data[:data]).to have_key(:type)
-      expect(data[:data][:type]).to eq('league')
+        expect(data[:data]).to have_key(:type)
+        expect(data[:data][:type]).to eq('league')
 
-      expect(data[:data]).to have_key(:id)
-      expect(data[:data][:id]).to be_an(String)
-      
-      expect(data[:data]).to have_key(:attributes)
-      expect(data[:data][:attributes]).to be_a(Hash)
+        expect(data[:data]).to have_key(:id)
+        expect(data[:data][:id]).to be_an(String)
+        
+        expect(data[:data]).to have_key(:attributes)
+        expect(data[:data][:attributes]).to be_a(Hash)
 
-      expect(data[:data][:attributes]).to have_key(:name)
-      expect(data[:data][:attributes][:name]).to eq(@new_params[:name])
+        expect(data[:data][:attributes]).to have_key(:name)
+        expect(data[:data][:attributes][:name]).to eq(@new_params[:name])
 
-      expect(data[:data][:attributes]).to have_key(:draft_time)
-      expect(data[:data][:attributes][:draft_time]).to eq(@new_params[:draft_time])
-      
-      expect(data[:data][:attributes]).to have_key(:draft_date)
-      expect(data[:data][:attributes][:draft_date]).to eq(@new_params[:draft_date])
+        expect(data[:data][:attributes]).to have_key(:draft_time)
+        expect(data[:data][:attributes][:draft_time]).to eq(@new_params[:draft_time])
+        
+        expect(data[:data][:attributes]).to have_key(:draft_date)
+        expect(data[:data][:attributes][:draft_date]).to eq(@new_params[:draft_date])
 
-      expect(data[:data][:attributes]).to have_key(:manager_id)
-      expect(data[:data][:attributes][:manager_id]).to eq(@new_params[:manager_id])
+        expect(data[:data][:attributes]).to have_key(:manager_id)
+        expect(data[:data][:attributes][:manager_id]).to eq(@new_params[:manager_id])
+      end
+    end
+
+    describe 'Sad Path' do
+      it 'returns an error if attributes are missing' do
+        @bad_params = {
+          name: 'Test League',
+          draft_time: '',
+          draft_date: '2020-08-01',
+          manager_id: 1
+        }
+
+        headers = { 'CONTENT_TYPE' => 'application/json' }
+
+        post '/api/v0/leagues', headers: headers, params: JSON.generate(league: @bad_params)
+
+        expect(response).to_not be_successful
+        expect(response).to have_http_status(422)
+
+        data = JSON.parse(response.body, symbolize_names: true)
+
+        expect(data).to be_a(Hash)
+        expect(data[:errors][:detail]).to eq("Validation failed: Draft time can't be blank")
+      end
     end
   end
 
@@ -59,7 +84,7 @@ RSpec.describe 'Leagues Requests' do
       @user_league_3 = UserLeague.create!(user_id: @user_2.id, league_id: @league_3.id)
     end
     it 'can send all leagues for a user' do
-      get '/api/v0/leagues', params: { user_id: @user_1.id }
+      get "/api/v0/users/#{@user_1.auth_token}/leagues"
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)
