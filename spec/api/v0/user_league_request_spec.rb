@@ -72,7 +72,7 @@ RSpec.describe 'UserLeague Requests' do
 
     describe 'happy_path' do
       it 'can delete a user_league' do
-        delete '/api/v0/user_leagues', headers: @headers, params: JSON.generate(user_league: @valid_params)
+        delete "/api/v0/user_leagues/#{@user_league.id}"
 
         expect(response).to be_successful
         expect(response).to have_http_status(204)
@@ -81,7 +81,7 @@ RSpec.describe 'UserLeague Requests' do
 
     describe 'sad_path' do
       it 'returns an error if user_league_id is invalid' do
-        delete '/api/v0/user_leagues', headers: @headers, params: JSON.generate(user_league: @invalid_params)
+        delete '/api/v0/user_leagues/0'
 
         expect(response).to_not be_successful
         expect(response).to have_http_status(404)

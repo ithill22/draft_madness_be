@@ -70,7 +70,7 @@ end
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
-  config.filter_sensitive_data('YOUR_API_KEY') { ENV['YOUR_API_KEY'] }
+  config.filter_sensitive_data('SPORTS_RADAR_API_KEY') { ENV['SPORTS_RADAR_API_KEY'] }
   config.default_cassette_options = { re_record_interval: 7.days }
   config.default_cassette_options = { allow_playback_repeats: true }
   config.configure_rspec_metadata!

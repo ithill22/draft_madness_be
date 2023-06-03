@@ -59,7 +59,7 @@ RSpec.describe 'Leagues Requests' do
       @user_league_3 = UserLeague.create!(user_id: @user_2.id, league_id: @league_3.id)
     end
     it 'can send all leagues for a user' do
-      get "/api/v0/leagues", params: { user_id: @user_1.id }
+      get '/api/v0/leagues', params: { user_id: @user_1.id }
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)
@@ -69,7 +69,7 @@ RSpec.describe 'Leagues Requests' do
       expect(json).to be_a(Hash)
       expect(json[:data]).to be_an(Array)
       expect(json[:data].count).to eq(2)
-      
+
       json[:data].each do |league|
         expect(league).to have_key(:type)
         expect(league[:type]).to eq('league')
@@ -82,10 +82,10 @@ RSpec.describe 'Leagues Requests' do
 
         expect(league[:attributes]).to have_key(:name)
         expect(league[:attributes][:name]).to be_a(String)
-        
+
         expect(league[:attributes]).to have_key(:draft_time)
         expect(league[:attributes][:draft_time]).to be_a(String)
-        
+
         expect(league[:attributes]).to have_key(:draft_date)
         expect(league[:attributes][:draft_date]).to be_a(String)
 
