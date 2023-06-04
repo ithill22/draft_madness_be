@@ -94,7 +94,7 @@ RSpec.describe 'User Requests' do
       @headers = { 'Content-Type' => 'application/json' }
     end
 
-    xit 'happy path' do
+    it 'happy path' do
       get "/api/v0/users/#{@user.auth_token}"
 
       expect(response).to be_successful

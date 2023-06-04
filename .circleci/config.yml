@@ -24,7 +24,10 @@ jobs:
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  main:
     jobs:
-      - build
+      build:
+        steps:
+          - checkout
+          - run: bundle install
+          - run: git push heroku main
