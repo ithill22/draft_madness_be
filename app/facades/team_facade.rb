@@ -1,6 +1,6 @@
 class TeamFacade
   def one_team(id)
-    Team.new(team_data(id))
+    all_teams.find { |team| team.id == id }
   end
 
   def all_teams
@@ -13,10 +13,6 @@ class TeamFacade
 
   def service
     @_service ||= SportRadarService.new
-  end
-
-  def team_data(id)
-    @_team_data ||= service.one_team(id)
   end
 
   def all_team_data
