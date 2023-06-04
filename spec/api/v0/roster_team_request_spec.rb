@@ -9,7 +9,7 @@ RSpec.describe 'RosterTeam Requests' do
 
   describe 'can create a new roster_team from params' do
     it 'happy path' do
-      post '/api/v0/roster_teams', headers: { 'Content-Type' => 'application/json' }, params: JSON.generate(roster_team: { user_league_id: @user_league.id, team_id: 'c10544de-e3bd-4776-ba2e-83df8c017fd1' })
+      post '/api/v0/roster_teams', headers: { 'Content-Type' => 'application/json' }, params: JSON.generate(roster_team: { user_league_id: @user_league.id, api_team_id: 'c10544de-e3bd-4776-ba2e-83df8c017fd1' })
 
       expect(response).to be_successful
       expect(response).to have_http_status(201)
@@ -31,12 +31,12 @@ RSpec.describe 'RosterTeam Requests' do
       expect(data[:data][:attributes]).to have_key(:user_league_id)
       expect(data[:data][:attributes][:user_league_id]).to eq(@user_league.id)
 
-      expect(data[:data][:attributes]).to have_key(:team_id)
-      expect(data[:data][:attributes][:team_id]).to eq('c10544de-e3bd-4776-ba2e-83df8c017fd1')
+      expect(data[:data][:attributes]).to have_key(:api_team_id)
+      expect(data[:data][:attributes][:api_team_id]).to eq('c10544de-e3bd-4776-ba2e-83df8c017fd1')
     end
 
     it 'sad path: missing user_league_id' do
-      post '/api/v0/roster_teams', headers: { 'Content-Type' => 'application/json' }, params: JSON.generate(roster_team: { team_id: 'c10544de-e3bd-4776-ba2e-83df8c017fd1' })
+      post '/api/v0/roster_teams', headers: { 'Content-Type' => 'application/json' }, params: JSON.generate(roster_team: { api_team_id: 'c10544de-e3bd-4776-ba2e-83df8c017fd1' })
 
       expect(response).to_not be_successful
       expect(response).to have_http_status(422)
@@ -44,10 +44,10 @@ RSpec.describe 'RosterTeam Requests' do
       data = JSON.parse(response.body, symbolize_names: true)
 
       expect(data).to be_a(Hash)
-      expect(data[:error][:details]).to eq('User league must exist')
+      expect(data[:errors][:detail]).to eq("Validation failed: User league can't be blank, User league must exist")
     end
 
-    it 'sad path: missing team_id' do
+    it 'sad path: missing api_team_id' do
       post '/api/v0/roster_teams', headers: { 'Content-Type' => 'application/json' }, params: JSON.generate(roster_team: { user_league_id: @user_league.id })
 
       expect(response).to_not be_successful
@@ -56,7 +56,7 @@ RSpec.describe 'RosterTeam Requests' do
       data = JSON.parse(response.body, symbolize_names: true)
 
       expect(data).to be_a(Hash)
-      expect(data[:error][:details]).to eq('Team must exist')
+      expect(data[:errors][:detail]).to eq("Validation failed: Api team can't be blank")
     end
   end
 end
