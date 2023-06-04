@@ -1,4 +1,8 @@
 class TeamFacade
+  def one_team(id)
+    all_teams.find { |team| team.id == id }
+  end
+
   def all_teams
     format_team_data.map do |team_data|
       Team.new(team_data)
