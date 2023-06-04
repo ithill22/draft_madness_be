@@ -8,7 +8,7 @@
 User.destroy_all
 League.destroy_all
 UserLeague.destroy_all
-RosterTeams.destroy_all
+RosterTeam.destroy_all
 
 @user1 = User.create!(name: 'Bob', email: 'bob@turing.edu', auth_token: 'abc123', google_id: '12345')
 @user2 = User.create!(name: 'Sally', email: 'sally@turing.edu,', auth_token: 'abc124', google_id: '12346')
