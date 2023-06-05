@@ -1,4 +1,9 @@
 class Api::V0::UserLeaguesController < ApplicationController
+  def show
+    user_league = UserLeague.find(params[:id])
+    render json: UserLeagueSerializer.new(user_league), status: 200
+  end
+
   def create
     user_league = UserLeague.create!(user_league_params)
     render json: UserLeagueSerializer.new(user_league), status: 201
