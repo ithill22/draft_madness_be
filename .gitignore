@@ -32,4 +32,5 @@
 
 # Ignore application configuration
 /config/application.yml
+/.vscode
 /spec/examples.txt
