@@ -10,7 +10,6 @@ Rails.application.routes.draw do
       end
       resources :leagues, only: %i[create show update destroy] do
         resources :user_leagues, only: %i[index], controller: 'leagues/user_leagues'
-        resources :users, only: %i[index], controller: 'leagues/users'
       end
       resources :user_leagues, only: %i[show create destroy] do
         resources :roster_teams, only: %i[index], controller: 'user_leagues/roster_teams'
