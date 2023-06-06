@@ -5,7 +5,7 @@ class Api::V0::UsersController < ApplicationController
   end
 
   def show
-    user = User.find_by!(auth_token: "#{params[:id]}.#{params[:format]}")
+    user = User.find(params[:id])
     render json: UserSerializer.new(user), status: 200
   end
 

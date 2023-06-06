@@ -94,8 +94,8 @@ RSpec.describe 'User Requests' do
       @headers = { 'Content-Type' => 'application/json' }
     end
 
-    xit 'happy path' do
-      get "/api/v0/users/#{@user.auth_token}"
+    it 'happy path' do
+      get "/api/v0/users/#{@user.id}"
 
       expect(response).to be_successful
       expect(response).to have_http_status(200)
@@ -128,8 +128,7 @@ RSpec.describe 'User Requests' do
     end
 
     it 'sad path' do
-      bad_auth_token = '12345.677890llasdhfhlkjasdhgde'
-      get "/api/v0/users/#{bad_auth_token}"
+      get "/api/v0/users/0"
 
       expect(response).to_not be_successful
       expect(response).to have_http_status(404)
@@ -137,7 +136,7 @@ RSpec.describe 'User Requests' do
       data = JSON.parse(response.body, symbolize_names: true)
 
       expect(data).to be_a(Hash)
-      expect(data[:errors][:detail]).to eq("Couldn't find User with [WHERE \"users\".\"auth_token\" = $1]")
+      expect(data[:errors][:detail]).to eq("Couldn't find User with 'id'=0")
     end
   end
 

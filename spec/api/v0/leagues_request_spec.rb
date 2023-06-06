@@ -88,7 +88,7 @@ RSpec.describe 'Leagues Requests' do
     end
     describe 'Happy Path' do
       it 'can send all leagues for a user' do
-        get "/api/v0/users/#{@user_1.auth_token}/leagues"
+        get "/api/v0/users/#{@user_1.id}/leagues"
 
         expect(response).to be_successful
         expect(response).to have_http_status(200)
@@ -134,7 +134,7 @@ RSpec.describe 'Leagues Requests' do
         data = JSON.parse(response.body, symbolize_names: true)
 
         expect(data).to be_a(Hash)
-        expect(data[:errors][:detail]).to eq("Couldn't find User with [WHERE \"users\".\"auth_token\" = $1]")
+        expect(data[:errors][:detail]).to eq("Couldn't find User with 'id'=1234567890")
       end
     end
   end
