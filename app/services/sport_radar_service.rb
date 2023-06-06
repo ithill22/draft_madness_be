@@ -1,6 +1,6 @@
 class SportRadarService
   def all_teams
-    get_url('ncaamb/trial/v8/en/tournaments/86f1f414-88e9-4ad1-be69-740f4db52183/summary.json')
+    get_url('/ncaamb/trial/v8/en/tournaments/86f1f414-88e9-4ad1-be69-740f4db52183/summary.json')
   end
 
   def conn
