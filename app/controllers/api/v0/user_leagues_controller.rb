@@ -17,6 +17,6 @@ class Api::V0::UserLeaguesController < ApplicationController
   private
 
   def user_league_params
-    params.require(:user_league).permit(:user_league_id, :user_id, :league_id, :user_name)
+    params.require(:user_league).permit(:user_league_id, :user_id, :league_id)
   end
 end
