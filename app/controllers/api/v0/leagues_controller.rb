@@ -6,7 +6,7 @@ class Api::V0::LeaguesController < ApplicationController
 
   def create
     league = League.create!(league_params)
-    UserLeague.create!(user_id: league.manager_id, league_id: league.id)
+    UserLeague.create!(user_id: league.manager_id, league_id: league.id, user_name: User.find(league.manager_id).name)
     render json: LeagueSerializer.new(league), status: 201
   end
 

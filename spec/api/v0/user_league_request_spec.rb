@@ -7,11 +7,13 @@ RSpec.describe 'UserLeague Requests' do
       @league = League.create(name: 'Frivolous Fanatics', draft_time: '12:00:00', draft_date: '2021-09-09', manager_id: @user.id)
       @params = {
         user_id: @user.id,
-        league_id: @league.id
+        league_id: @league.id,
+        user_name: @user.name
       }
       @bad_params = {
         league_id: @league.id,
-        user_id: ''
+        user_id: '',
+        user_name: @user.name
       }
       @headers = { 'Content-Type' => 'application/json' }
     end
@@ -64,7 +66,7 @@ RSpec.describe 'UserLeague Requests' do
     before(:each) do
       @user = User.create(name: 'Bernie Sanders', email: 'feel.the.bernnnn@gmail.com', google_id: '0123456789', auth_token: 'a;skt821498435nsdioopa7123h0dfk')
       @league = League.create(name: 'Frivolous Fanatics', draft_time: '12:00:00', draft_date: '2021-09-09', manager_id: @user.id)
-      @user_league = UserLeague.create(user_id: @user.id, league_id: @league.id)
+      @user_league = UserLeague.create(user_id: @user.id, league_id: @league.id, user_name: @user.name)
       @valid_params = { user_league_id: @user_league.id }
       @invalid_params = { user_league_id: '1a24573bb5' }
       @headers = { 'Content-Type' => 'application/json' }
@@ -94,8 +96,8 @@ RSpec.describe 'UserLeague Requests' do
       @user1 = User.create!(name: 'Bob', email: 'bob@turing.edu', auth_token: 'abc123', google_id: '12345')
       @user2 = User.create!(name: 'Sally', email: 'sally@turing.edu,', auth_token: 'abc124', google_id: '12346')
       @league1 = League.create!(name: 'League 1', draft_time: '12:00', draft_date: '2021-08-01', manager_id: @user1.id)
-      @user_league1 = UserLeague.create!(user_id: @user1.id, league_id: @league1.id)
-      @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league1.id)
+      @user_league1 = UserLeague.create!(user_id: @user1.id, league_id: @league1.id, user_name: @user1.name)
+      @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league1.id, user_name: @user2.name)
     end
     describe 'happy path' do
       it 'can send all user_leagues for a league' do
@@ -149,8 +151,8 @@ RSpec.describe 'UserLeague Requests' do
       @user1 = User.create!(name: 'Bob', email: 'bob@turing.edu', auth_token: 'abc123', google_id: '12345')
       @user2 = User.create!(name: 'Sally', email: 'sally@turing.edu,', auth_token: 'abc124', google_id: '12346')
       @league1 = League.create!(name: 'League 1', draft_time: '12:00', draft_date: '2021-08-01', manager_id: @user1.id)
-      @user_league1 = UserLeague.create!(user_id: @user1.id, league_id: @league1.id)
-      @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league1.id)
+      @user_league1 = UserLeague.create!(user_id: @user1.id, league_id: @league1.id, user_name: @user1.name)
+      @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league1.id, user_name: @user2.name)
     end
     describe 'happy path' do
       it 'can send one user_league' do
