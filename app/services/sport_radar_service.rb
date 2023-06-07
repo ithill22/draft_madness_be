@@ -4,6 +4,7 @@ class SportRadarService
   end
 
   def conn
+    sleep(1)
     Faraday.new(url: 'https://api.sportradar.us') do |f|
       f.params['api_key'] = ENV['SPORT_RADAR_API_KEY']
     end
