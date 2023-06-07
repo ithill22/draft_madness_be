@@ -4,6 +4,7 @@ RSpec.describe SportRadarService do
   context 'instance methods' do
     context '#all_teams' do
       it 'returns all teams', :vcr do
+        sleep(1)
         search = SportRadarService.new.all_teams
 
         expect(search).to be_a(Hash)
