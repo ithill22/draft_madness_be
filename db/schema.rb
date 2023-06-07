@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_03_215424) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_07_200340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
-    t.time "draft_time"
-    t.date "draft_date"
+    t.string "draft_time"
+    t.string "draft_date"
     t.integer "manager_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
