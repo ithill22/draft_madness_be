@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe 'Team Requests' do
   describe 'all teams' do
     it 'can retrieve and return all teams', :vcr do
-      sleep(1)
       get '/api/v0/teams'
 
       expect(response).to be_successful
@@ -38,7 +37,6 @@ RSpec.describe 'Team Requests' do
   describe 'one team' do
     it 'happy path', :vcr do
       team_id = 'c10544de-e3bd-4776-ba2e-83df8c017fd1'
-      sleep(1)
       get "/api/v0/teams/#{team_id}"
 
       expect(response).to be_successful
