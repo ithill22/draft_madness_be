@@ -82,3 +82,92 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+def article_data
+  @data = {
+    "abstract": "Times sports writer Pete Thamel breaks down the NCAA tournament brackets and highlights the teams to watch. (Producer: Kassie Bracken)",
+    "web_url": "https://www.nytimes.com/video/sports/1194817114941/ncaa-tournament-preview.html",
+    "snippet": "Times sports writer Pete Thamel breaks down the NCAA tournament brackets and highlights the teams to watch. (Producer: Kassie Bracken)",
+    "lead_paragraph": "Times sports writer Pete Thamel breaks down the NCAA tournament brackets and highlights the teams to watch. (Producer: Kassie Bracken)",
+    "source": "The New York Times",
+    "multimedia": [
+        {
+            "rank": 0,
+            "subtype": "wide",
+            "caption": nil,
+            "credit": nil,
+            "type": "image",
+            "url": "images/2006/03/13/sports/Mar13NCAAPREVIEW.190x126.fr.jpg",
+            "height": 126,
+            "width": 190,
+            "legacy": {
+                "widewidth": 190,
+                "wideheight": 126,
+                "wide": "images/2006/03/13/sports/Mar13NCAAPREVIEW.190x126.fr.jpg"
+            },
+            "subType": "wide",
+            "crop_name": "thumbWide"
+        },
+        {
+            "rank": 0,
+            "subtype": "videoThumb",
+            "caption": nil,
+            "credit": nil,
+            "type": "image",
+            "url": "images/2006/03/13/sports/Mar13NCAAPREVIEW.75x50.fr.jpg",
+            "height": 50,
+            "width": 75,
+            "legacy": {},
+            "subType": "videoThumb",
+            "crop_name": "videoThumb"
+        },
+        {
+            "rank": 0,
+            "subtype": "thumbnail",
+            "caption": nil,
+            "credit": nil,
+            "type": "image",
+            "url": "images/2006/03/13/sports/Mar13NCAAPREVIEW.75x75.fr.jpg",
+            "height": 75,
+            "width": 75,
+            "legacy": {
+                "thumbnail": "images/2006/03/13/sports/Mar13NCAAPREVIEW.75x75.fr.jpg",
+                "thumbnailwidth": 75,
+                "thumbnailheight": 75
+            },
+            "subType": "thumbnail",
+            "crop_name": "thumbStandard"
+        }
+    ],
+    "headline": {
+        "main": "NCAA Tournament Preview",
+        "kicker": nil,
+        "content_kicker": nil,
+        "print_headline": nil,
+        "name": nil,
+        "seo": nil,
+        "sub": nil
+    },
+    "keywords": [
+        {
+            "name": "subject",
+            "value": "NCAA BASKETBALL TOURNAMENT",
+            "rank": 1,
+            "major": "N"
+        }
+    ],
+    "pub_date": "2006-03-13T14:18:19+0000",
+    "document_type": "multimedia",
+    "news_desk": "",
+    "section_name": "Sports",
+    "byline": {
+        "original": nil,
+        "person": [],
+        "organization": nil
+    },
+    "type_of_material": "Video",
+    "_id": "nyt://video/cd6682aa-0740-5bdd-9567-faab13866c29",
+    "word_count": 0,
+    "uri": "nyt://video/cd6682aa-0740-5bdd-9567-faab13866c29"
+  }
+end
