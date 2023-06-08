@@ -7,9 +7,9 @@ RSpec.describe 'RosterTeam Requests' do
     @league = League.create!(name: 'March Madness', draft_time: '8:00 PM', draft_date: '2021-03-18', manager_id: @user.id)
     @user_league = UserLeague.create!(user_id: @user.id, league_id: @league.id)
     @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league.id)
-    @roster_team1 = RosterTeam.create!(user_league_id: @user_league.id, api_team_id: 'aslkdhkalsdj-aklsjdhlkja-asdlkjhaklsj')
-    @roster_team2 = RosterTeam.create!(user_league_id: @user_league.id, api_team_id: 'mnxcbm-wioueyqoiuwmndsiuqywe-askjdhf')
-    @roster_team3 = RosterTeam.create!(user_league_id: @user_league2.id, api_team_id: 'aslkdhkalsdj-aklsjdhlkja-asdlkjhaklsj')
+    @roster_team1 = RosterTeam.create!(user_league_id: @user_league.id, api_team_id: 'aslkdhkalsdj-aklsjdhlkja-asdlkjhaklsj', score: 0)
+    @roster_team2 = RosterTeam.create!(user_league_id: @user_league.id, api_team_id: 'mnxcbm-wioueyqoiuwmndsiuqywe-askjdhf', score: 1)
+    @roster_team3 = RosterTeam.create!(user_league_id: @user_league2.id, api_team_id: 'aslkdhkalsdj-aklsjdhlkja-asdlkjhaklsj', score: 2)
   end
 
   describe 'can create a new roster_team from params' do
@@ -38,6 +38,9 @@ RSpec.describe 'RosterTeam Requests' do
 
       expect(data[:data][:attributes]).to have_key(:api_team_id)
       expect(data[:data][:attributes][:api_team_id]).to eq('c10544de-e3bd-4776-ba2e-83df8c017fd1')
+
+      expect(data[:data][attributes]).to have_key(:score)
+      expect(data[:data][:attributes][:score]).to be_a(Integer)
     end
 
     it 'sad path: missing user_league_id' do
@@ -93,6 +96,9 @@ RSpec.describe 'RosterTeam Requests' do
 
       expect(roster_team[:attributes]).to have_key(:api_team_id)
       expect(roster_team[:attributes][:api_team_id]).to be_a(String)
+
+      expect(data[:data][attributes]).to have_key(:score)
+      expect(data[:data][:attributes][:score]).to be_a(Integer)
     end
   end
 end

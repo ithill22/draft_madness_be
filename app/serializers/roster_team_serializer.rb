@@ -1,4 +1,4 @@
 class RosterTeamSerializer
   include JSONAPI::Serializer
-  attributes :user_league_id, :api_team_id
+  attributes :user_league_id, :api_team_id, :score
 end
