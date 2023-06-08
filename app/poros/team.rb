@@ -7,5 +7,6 @@ class Team
     @name = data[:name]
     @region = data[:region]
     @seed = data[:seed]
+    @games_won = data[:games_won]
   end
 end

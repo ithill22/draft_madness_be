@@ -28,6 +28,7 @@ class TeamFacade
           type: participant[:type],
           name: participant[:name],
           seed: participant[:seed],
+          games_won: participant[:games_won],
           region: region
         }
       end

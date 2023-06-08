@@ -1,0 +1,508 @@
+{
+  "data": {
+    "year": "2023",
+    "start_date": "2023-03-16",
+    "end_date": "2023-04-03",
+    "brackets": [{
+      "id": "37fedd1f-0fc5-4c7e-a55c-5437495fbe32",
+      "name": "South Regional",
+      "location": "Louisville, KY, USA",
+      "rank": 1,
+      "participants": [{
+          "id": "fe21a988-3e96-4f3c-8f9f-b449ccda43b0",
+          "name": "Texas A&M-CC Islanders",
+          "market": "Texas A&M-CC",
+          "type": "team",
+          "seed": 16,
+          "games_won": 0
+      }, {
+          "id": "9b166a3f-e64b-4825-bb6b-92c6f0418263",
+          "name": "Arizona Wildcats",
+          "market": "Arizona",
+          "type": "team",
+          "seed": 2,
+          "games_won": 0
+      }, {
+          "id": "56913910-87f7-4ad7-ae3b-5cd9fb218fd9",
+          "name": "Virginia Cavaliers",
+          "market": "Virginia",
+          "type": "team",
+          "seed": 4,
+          "games_won": 0
+      }, {
+          "id": "52df1e19-b142-4a76-a439-ad68455d0581",
+          "name": "North Carolina State Wolfpack",
+          "market": "North Carolina State",
+          "type": "team",
+          "seed": 11,
+          "games_won": 0
+      }, {
+          "id": "e6914f16-ca37-4d2e-ba26-a425910283e2",
+          "name": "San Diego State Aztecs",
+          "market": "San Diego State",
+          "type": "team",
+          "seed": 5,
+          "games_won": 5
+      }, {
+          "id": "2778d005-cc14-4e58-9bf2-3fc37bffb62f",
+          "name": "Maryland Terrapins",
+          "market": "Maryland",
+          "type": "team",
+          "seed": 8,
+          "games_won": 1
+      }, {
+          "id": "c2104cdc-c83d-40d2-a3cd-df986e29f5d3",
+          "name": "Alabama Crimson Tide",
+          "market": "Alabama",
+          "type": "team",
+          "seed": 1,
+          "games_won": 2
+      }, {
+          "id": "f770d3a2-221c-49ce-9c7a-680f7417fe9e",
+          "name": "West Virginia Mountaineers",
+          "market": "West Virginia",
+          "type": "team",
+          "seed": 9,
+          "games_won": 0
+      }, {
+          "id": "7d797407-623e-476d-b299-46de4275414d",
+          "name": "Creighton Bluejays",
+          "market": "Creighton",
+          "type": "team",
+          "seed": 6,
+          "games_won": 3
+      }, {
+          "id": "fe406882-9f22-495e-9df6-ef357a6803c6",
+          "name": "Princeton Tigers",
+          "market": "Princeton",
+          "type": "team",
+          "seed": 15,
+          "games_won": 2
+      }, {
+          "id": "77ca152a-cb2f-48a5-97b2-492351250d94",
+          "name": "Missouri Tigers",
+          "market": "Missouri",
+          "type": "team",
+          "seed": 7,
+          "games_won": 1
+      }, {
+          "id": "6a7083ab-1832-48c0-9168-427b35adbcde",
+          "name": "Southeast Missouri State Redhawks",
+          "market": "Southeast Missouri State",
+          "type": "team",
+          "seed": 16,
+          "games_won": 0
+      }, {
+          "id": "3b6293f3-03db-46d2-8793-248963c2d83b",
+          "name": "UC Santa Barbara Gauchos",
+          "market": "UC Santa Barbara",
+          "type": "team",
+          "seed": 14,
+          "games_won": 0
+      }, {
+          "id": "ca5318f2-48eb-4f6b-896a-966b900aa42f",
+          "name": "Furman Paladins",
+          "market": "Furman",
+          "type": "team",
+          "seed": 13,
+          "games_won": 1
+      }, {
+          "id": "8548dacb-3636-48a8-8c46-611ab0c15fc0",
+          "name": "Charleston Cougars",
+          "market": "Charleston",
+          "type": "team",
+          "seed": 12,
+          "games_won": 0
+      }, {
+          "id": "db6e1cab-3fa3-4a93-a673-8b2a358ff4bf",
+          "name": "Baylor Bears",
+          "market": "Baylor",
+          "type": "team",
+          "seed": 3,
+          "games_won": 1
+      }, {
+          "id": "7672ff16-8436-47e6-8546-0fb5494ec7ee",
+          "name": "Utah State Aggies",
+          "market": "Utah State",
+          "type": "team",
+          "seed": 10,
+          "games_won": 0
+      }]
+  }, {
+      "id": "913c2a39-8a6f-4bfa-b948-ee795dcd826f",
+      "name": "Midwest Regional",
+      "location": "Kansas City, MO, USA",
+      "rank": 2,
+      "participants": [{
+          "id": "24051034-96bb-4f78-a3a6-312f3258780f",
+          "name": "Pittsburgh Panthers",
+          "market": "Pittsburgh",
+          "type": "team",
+          "seed": 11,
+          "games_won": 1
+      }, {
+          "id": "0d8a328f-20ce-410b-bed1-15fc01308aaf",
+          "name": "Xavier Musketeers",
+          "market": "Xavier",
+          "type": "team",
+          "seed": 3,
+          "games_won": 2
+      }, {
+          "id": "c3f0a8ce-af67-497f-a750-3b859376b20a",
+          "name": "Indiana Hoosiers",
+          "market": "Indiana",
+          "type": "team",
+          "seed": 4,
+          "games_won": 1
+      }, {
+          "id": "6ed15092-2670-450a-99c2-61d861e87644",
+          "name": "Texas Longhorns",
+          "market": "Texas",
+          "type": "team",
+          "seed": 2,
+          "games_won": 3
+      }, {
+          "id": "0c0608b3-f349-4f5e-9a10-7e6a744dd0d2",
+          "name": "Auburn Tigers",
+          "market": "Auburn",
+          "type": "team",
+          "seed": 9,
+          "games_won": 1
+      }, {
+          "id": "80a19b57-d6ab-4bee-934f-33a72c2e958a",
+          "name": "Colgate Raiders",
+          "market": "Colgate",
+          "type": "team",
+          "seed": 15,
+          "games_won": 0
+      }, {
+          "id": "4aebd148-8119-4875-954c-66779867989b",
+          "name": "Penn State Nittany Lions",
+          "market": "Penn State",
+          "type": "team",
+          "seed": 10,
+          "games_won": 1
+      }, {
+          "id": "ef184799-d79b-49d9-a662-991eaf4044cd",
+          "name": "Texas A&M Aggies",
+          "market": "Texas A&M",
+          "type": "team",
+          "seed": 7,
+          "games_won": 0
+      }, {
+          "id": "7aec5187-cb1b-45e5-8f7d-406d766cdc73",
+          "name": "Miami (FL) Hurricanes",
+          "market": "Miami (FL)",
+          "type": "team",
+          "seed": 5,
+          "games_won": 4
+      }, {
+          "id": "2e8442e9-bd09-4d46-9dd3-de79433287f3",
+          "name": "Kennesaw State Owls",
+          "market": "Kennesaw State",
+          "type": "team",
+          "seed": 14,
+          "games_won": 0
+      }, {
+          "id": "1f99a164-d593-4d81-85d5-0d7889d6f486",
+          "name": "Houston Cougars",
+          "market": "Houston",
+          "type": "team",
+          "seed": 1,
+          "games_won": 2
+      }, {
+          "id": "a1ba4b89-d97c-44e2-835f-79ad3ccaa5ae",
+          "name": "Mississippi State Bulldogs",
+          "market": "Mississippi State",
+          "type": "team",
+          "seed": 11,
+          "games_won": 0
+      }, {
+          "id": "3da4798c-2d58-4dac-b66e-ad145a91b544",
+          "name": "Kent State Golden Flashes",
+          "market": "Kent State",
+          "type": "team",
+          "seed": 13,
+          "games_won": 0
+      }, {
+          "id": "aed211c3-23a4-4188-ad70-22c6eba7d765",
+          "name": "Drake Bulldogs",
+          "market": "Drake",
+          "type": "team",
+          "seed": 12,
+          "games_won": 0
+      }, {
+          "id": "ab9a1315-293f-42d3-a164-860216e81576",
+          "name": "Northern Kentucky Norse",
+          "market": "Northern Kentucky",
+          "type": "team",
+          "seed": 16,
+          "games_won": 0
+      }, {
+          "id": "c10544de-e3bd-4776-ba2e-83df8c017fd1",
+          "name": "Iowa Hawkeyes",
+          "market": "Iowa",
+          "type": "team",
+          "seed": 8,
+          "games_won": 0
+      }, {
+          "id": "0e4258fa-3154-4c16-b693-adecab184c6c",
+          "name": "Iowa State Cyclones",
+          "market": "Iowa State",
+          "type": "team",
+          "seed": 6,
+          "games_won": 0
+      }]
+  }, {
+      "id": "9e0052e3-d649-4cb3-b186-d48f9801c042",
+      "name": "East Regional",
+      "location": "New York, NY, USA",
+      "rank": 4,
+      "participants": [{
+          "id": "d203f38a-a166-4258-bca2-e161b591ecfb",
+          "name": "Kansas State Wildcats",
+          "market": "Kansas State",
+          "type": "team",
+          "seed": 3,
+          "games_won": 3
+      }, {
+          "id": "06f7c904-0ac7-4125-b0f4-f4871bb69057",
+          "name": "Marquette Golden Eagles",
+          "market": "Marquette",
+          "type": "team",
+          "seed": 2,
+          "games_won": 1
+      }, {
+          "id": "c851131a-5ecd-4670-81bc-b40f4837dd65",
+          "name": "Florida Atlantic Owls",
+          "market": "Florida Atlantic",
+          "type": "team",
+          "seed": 9,
+          "games_won": 4
+      }, {
+          "id": "12d7f888-675b-459f-9099-a38f771d8a95",
+          "name": "Purdue Boilermakers",
+          "market": "Purdue",
+          "type": "team",
+          "seed": 1,
+          "games_won": 0
+      }, {
+          "id": "b71d5a1b-2671-4e5a-b94b-06bfb22a27dd",
+          "name": "Fairleigh Dickinson Knights",
+          "market": "Fairleigh Dickinson",
+          "type": "team",
+          "seed": 16,
+          "games_won": 1
+      }, {
+          "id": "1551b3a0-6d10-4ffa-8dfa-73b56f004553",
+          "name": "Memphis Tigers",
+          "market": "Memphis",
+          "type": "team",
+          "seed": 8,
+          "games_won": 0
+      }, {
+          "id": "a41d5a05-4c11-4171-a57e-e7a1ea325a6d",
+          "name": "Michigan State Spartans",
+          "market": "Michigan State",
+          "type": "team",
+          "seed": 7,
+          "games_won": 2
+      }, {
+          "id": "eb157f98-0697-459c-9293-ddb162ceb28b",
+          "name": "Texas Southern Tigers",
+          "market": "Texas Southern",
+          "type": "team",
+          "seed": 16,
+          "games_won": 0
+      }, {
+          "id": "3a000455-de7c-4ca8-880e-abdce7f21da9",
+          "name": "USC Trojans",
+          "market": "USC",
+          "type": "team",
+          "seed": 10,
+          "games_won": 0
+      }, {
+          "id": "b827dbdf-230f-4916-9703-3bb9004e26eb",
+          "name": "Tennessee Volunteers",
+          "market": "Tennessee",
+          "type": "team",
+          "seed": 4,
+          "games_won": 2
+      }, {
+          "id": "faeb1160-5d15-4f26-99fc-c441cf21fc7f",
+          "name": "Duke Blue Devils",
+          "market": "Duke",
+          "type": "team",
+          "seed": 5,
+          "games_won": 1
+      }, {
+          "id": "18e89867-9201-41ce-ba19-fadddf92fa17",
+          "name": "Vermont Catamounts",
+          "market": "Vermont",
+          "type": "team",
+          "seed": 15,
+          "games_won": 0
+      }, {
+          "id": "bec40585-b587-4548-93f5-b7c00b046aea",
+          "name": "Montana State Bobcats",
+          "market": "Montana State",
+          "type": "team",
+          "seed": 14,
+          "games_won": 0
+      }, {
+          "id": "095417ae-62b0-4109-afc4-d92918599dd4",
+          "name": "Oral Roberts Golden Eagles",
+          "market": "Oral Roberts",
+          "type": "team",
+          "seed": 12,
+          "games_won": 0
+      }, {
+          "id": "63cad858-8654-4956-8438-8fe79cd1208a",
+          "name": "Louisiana Ragin' Cajuns",
+          "market": "Louisiana",
+          "type": "team",
+          "seed": 13,
+          "games_won": 0
+      }, {
+          "id": "7d3b9c72-cbdd-4b64-9aa3-a5bde9b75fdc",
+          "name": "Providence Friars",
+          "market": "Providence",
+          "type": "team",
+          "seed": 11,
+          "games_won": 0
+      }, {
+          "id": "2267a1f4-68f6-418b-aaf6-2aa0c4b291f1",
+          "name": "Kentucky Wildcats",
+          "market": "Kentucky",
+          "type": "team",
+          "seed": 6,
+          "games_won": 1
+      }]
+  }, {
+      "id": "dc3d7d29-6031-4224-9091-dbd0036cc358",
+      "name": "West Regional",
+      "location": "Las Vegas, NV, USA",
+      "rank": 3,
+      "participants": [{
+          "id": "2f4d21f8-6d5f-48a5-abca-52a30583871a",
+          "name": "Gonzaga Bulldogs",
+          "market": "Gonzaga",
+          "type": "team",
+          "seed": 3,
+          "games_won": 3
+      }, {
+          "id": "62a73b4a-e281-4483-a1f8-f1160a18e456",
+          "name": "Nevada Wolf Pack",
+          "market": "Nevada",
+          "type": "team",
+          "seed": 11,
+          "games_won": 0
+      }, {
+          "id": "b18f34af-a7f1-4659-a2e5-fc11a31cd316",
+          "name": "Saint Mary's Gaels",
+          "market": "Saint Mary's",
+          "type": "team",
+          "seed": 5,
+          "games_won": 1
+      }, {
+          "id": "ad9fce12-6b1a-400c-bcbe-29d84d065fc0",
+          "name": "UNC Asheville Bulldogs",
+          "market": "UNC Asheville",
+          "type": "team",
+          "seed": 15,
+          "games_won": 0
+      }, {
+          "id": "22fbe5dc-c6db-4675-b3a3-2d8af7f5d313",
+          "name": "Howard Bison",
+          "market": "Howard",
+          "type": "team",
+          "seed": 16,
+          "games_won": 0
+      }, {
+          "id": "255c2a87-40c0-4989-bbb9-d286aac5d28e",
+          "name": "Iona Gaels",
+          "market": "Iona",
+          "type": "team",
+          "seed": 13,
+          "games_won": 0
+      }, {
+          "id": "f7fcbb6e-4a55-41ea-ba21-f763ed914467",
+          "name": "TCU Horned Frogs",
+          "market": "TCU",
+          "type": "team",
+          "seed": 6,
+          "games_won": 1
+      }, {
+          "id": "c70c23c4-ab09-4797-a1af-792c848ab17f",
+          "name": "Arkansas Razorbacks",
+          "market": "Arkansas",
+          "type": "team",
+          "seed": 8,
+          "games_won": 2
+      }, {
+          "id": "150148c2-ca8f-414f-8f41-d94a55d4a122",
+          "name": "Illinois Fighting Illini",
+          "market": "Illinois",
+          "type": "team",
+          "seed": 9,
+          "games_won": 0
+      }, {
+          "id": "c1c54dbf-805c-47fc-a707-c803e94db2a4",
+          "name": "Boise State Broncos",
+          "market": "Boise State",
+          "type": "team",
+          "seed": 10,
+          "games_won": 0
+      }, {
+          "id": "f7e6acc3-0778-4de5-940a-d88e20df1159",
+          "name": "Grand Canyon Antelopes",
+          "market": "Grand Canyon",
+          "type": "team",
+          "seed": 14,
+          "games_won": 0
+      }, {
+          "id": "ec0d6b67-4b16-4b50-92b2-1a651dae6b0f",
+          "name": "UCLA Bruins",
+          "market": "UCLA",
+          "type": "team",
+          "seed": 2,
+          "games_won": 2
+      }, {
+          "id": "4b7dedc0-7b48-49a4-aad6-8a94a33274d2",
+          "name": "Northwestern Wildcats",
+          "market": "Northwestern",
+          "type": "team",
+          "seed": 7,
+          "games_won": 1
+      }, {
+          "id": "c1c1e6df-a383-4fbd-ba7b-32d4f9ef9518",
+          "name": "VCU Rams",
+          "market": "VCU",
+          "type": "team",
+          "seed": 12,
+          "games_won": 0
+      }, {
+          "id": "efba5350-79bc-47aa-a189-db177b95b491",
+          "name": "UConn Huskies",
+          "market": "UConn",
+          "type": "team",
+          "seed": 4,
+          "games_won": 6
+      }, {
+          "id": "fae4855b-1b64-4b40-a632-9ed345e1e952",
+          "name": "Kansas Jayhawks",
+          "market": "Kansas",
+          "type": "team",
+          "seed": 1,
+          "games_won": 1
+      }, {
+          "id": "ad4bc983-8d2e-4e6f-a8f9-80840a786c64",
+          "name": "Arizona State Sun Devils",
+          "market": "Arizona State",
+          "type": "team",
+          "seed": 11,
+          "games_won": 0
+      }]
+    }]
+  }
+}
