@@ -1,7 +1,8 @@
 class Article
-  attr_reader :headline, :url, :date
+  attr_reader :id, :headline, :url, :date
 
-  def initialize(data)
+  def initialize(id, data)
+    @id = id
     @headline = data[:abstract]
     @url = data[:web_url]
     @date = format_date(data[:pub_date])
