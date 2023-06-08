@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       end
       resources :teams, only: %i[index show]
       resources :roster_teams, only: %i[create]
+      resources :articles, only: %i[index]
     end
   end
 end
