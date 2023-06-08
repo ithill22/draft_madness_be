@@ -1,4 +1,4 @@
 class TeamSerializer
   include JSONAPI::Serializer
-  attributes :name, :region, :seed
+  attributes :id, :name, :region, :seed, :games_won
 end

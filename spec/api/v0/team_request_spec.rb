@@ -31,6 +31,9 @@ RSpec.describe 'Team Requests' do
 
       expect(team[:attributes]).to have_key(:seed)
       expect(team[:attributes][:seed]).to be_a(Integer)
+
+      expect(team[:attributes]).to have_key(:games_won)
+      expect(team[:attributes][:games_won]).to be_a(Integer)
     end
   end
 
@@ -64,6 +67,9 @@ RSpec.describe 'Team Requests' do
 
       expect(data[:data][:attributes]).to have_key(:seed)
       expect(data[:data][:attributes][:seed]).to be_a(Integer)
+
+      expect(data[:data][:attributes]).to have_key(:games_won)
+      expect(data[:data][:attributes][:games_won]).to be_a(Integer)
     end
   end
 end
