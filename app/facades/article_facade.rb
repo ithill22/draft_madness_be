@@ -1,8 +1,8 @@
 class ArticleFacade
   def all_articles
-    articles = service.all_articles
-    articles.dig(:response, :docs).map do |article|
-      Article.new(article)
+    articles = service.all_articles.dig(:response, :docs)
+    articles.map do |article|
+      Article.new(articles.index(article), article)
     end
   end
 
