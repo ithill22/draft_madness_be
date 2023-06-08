@@ -23,8 +23,10 @@ RosterTeam.destroy_all
 @user11 = User.create!(name: 'Jasper', email: 'jasper@turing.edu', auth_token: 'abc133', google_id: '12355')
 @user12 = User.create!(name: 'Jax', email: 'jax@turing.edu', auth_token: 'abc134', google_id: '12356')
 
-@league1 = League.create!(name: 'League 1', draft_time: '12:00', draft_date: '2021-08-01', manager_id: @user1.id)
+@league1 = League.create!(name: 'League 1', draft_time: '22:00', draft_date: '2023-06-07', manager_id: @user1.id)
 @league2 = League.create!(name: 'League 2', draft_time: '12:00', draft_date: '2021-08-01', manager_id: @user2.id)
+@league3 = League.create!(name: 'League 4', draft_time: Time.now, draft_date: Date.today, manager_id: @user3.id)
+@league4 = League.create!(name: 'League 5', draft_time: Time.now + 1.hour, draft_date: Date.today, manager_id: @user4.id)
 
 @user_league1 = UserLeague.create!(user_id: @user1.id, league_id: @league1.id)
 @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league1.id)
@@ -42,6 +44,14 @@ RosterTeam.destroy_all
 @user_league14 = UserLeague.create!(user_id: @user10.id, league_id: @league2.id)
 @user_league15 = UserLeague.create!(user_id: @user11.id, league_id: @league2.id)
 @user_league16 = UserLeague.create!(user_id: @user12.id, league_id: @league2.id)
+@user_league17 = UserLeague.create!(user_id: @user1.id, league_id: @league3.id)
+@user_league18 = UserLeague.create!(user_id: @user2.id, league_id: @league3.id)
+@user_league19 = UserLeague.create!(user_id: @user3.id, league_id: @league3.id)
+@user_league20 = UserLeague.create!(user_id: @user4.id, league_id: @league3.id)
+@user_league21 = UserLeague.create!(user_id: @user5.id, league_id: @league3.id)
+@user_league22 = UserLeague.create!(user_id: @user6.id, league_id: @league3.id)
+@user_league23 = UserLeague.create!(user_id: @user7.id, league_id: @league3.id)
+@user_league24 = UserLeague.create!(user_id: @user8.id, league_id: @league3.id)
 
 @roster_team1 = RosterTeam.create!(user_league_id: @user_league1.id, score: 0, api_team_id: '7d797407-623e-476d-b299-46de4275414d')
 @roster_team2 = RosterTeam.create!(user_league_id: @user_league1.id, score: 2, api_team_id: 'ec0d6b67-4b16-4b50-92b2-1a651dae6b0f')
