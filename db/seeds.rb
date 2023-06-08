@@ -23,8 +23,10 @@ RosterTeam.destroy_all
 @user11 = User.create!(name: 'Jasper', email: 'jasper@turing.edu', auth_token: 'abc133', google_id: '12355')
 @user12 = User.create!(name: 'Jax', email: 'jax@turing.edu', auth_token: 'abc134', google_id: '12356')
 
-@league1 = League.create!(name: 'League 1', draft_time: '12:00', draft_date: '2021-08-01', manager_id: @user1.id)
+@league1 = League.create!(name: 'League 1', draft_time: '22:00', draft_date: '2023-06-07', manager_id: @user1.id)
 @league2 = League.create!(name: 'League 2', draft_time: '12:00', draft_date: '2021-08-01', manager_id: @user2.id)
+@league3 = League.create!(name: 'League 4', draft_time: Time.now, draft_date: Date.today, manager_id: @user3.id)
+@league4 = League.create!(name: 'League 5', draft_time: Time.now + 1.hour, draft_date: Date.today, manager_id: @user4.id)
 
 @user_league1 = UserLeague.create!(user_id: @user1.id, league_id: @league1.id)
 @user_league2 = UserLeague.create!(user_id: @user2.id, league_id: @league1.id)
