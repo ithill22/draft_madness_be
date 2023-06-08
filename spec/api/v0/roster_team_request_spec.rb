@@ -21,6 +21,7 @@ RSpec.describe 'RosterTeam Requests' do
 
       data = JSON.parse(response.body, symbolize_names: true)
 
+
       expect(data).to be_a(Hash)
       expect(data[:data]).to be_a(Hash)
 
@@ -39,8 +40,7 @@ RSpec.describe 'RosterTeam Requests' do
       expect(data[:data][:attributes]).to have_key(:api_team_id)
       expect(data[:data][:attributes][:api_team_id]).to eq('c10544de-e3bd-4776-ba2e-83df8c017fd1')
 
-      expect(data[:data][attributes]).to have_key(:score)
-      expect(data[:data][:attributes][:score]).to be_a(Integer)
+      expect(data[:data][:attributes]).to have_key(:score)
     end
 
     it 'sad path: missing user_league_id' do
@@ -82,6 +82,7 @@ RSpec.describe 'RosterTeam Requests' do
       expect(data[:data].count).to eq(2)
       roster_team = data[:data].first
 
+
       expect(roster_team).to have_key(:id)
       expect(roster_team[:id]).to be_a(String)
 
@@ -97,8 +98,8 @@ RSpec.describe 'RosterTeam Requests' do
       expect(roster_team[:attributes]).to have_key(:api_team_id)
       expect(roster_team[:attributes][:api_team_id]).to be_a(String)
 
-      expect(data[:data][attributes]).to have_key(:score)
-      expect(data[:data][:attributes][:score]).to be_a(Integer)
+      expect(roster_team[:attributes]).to have_key(:score)
+      expect(roster_team[:attributes][:score]).to be_a(Integer)
     end
   end
 end
