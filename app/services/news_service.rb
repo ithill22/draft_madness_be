@@ -1,6 +1,6 @@
 class NewsService
   def all_articles
-    get_url('/svc/search/v2/articlesearch.json?q=ncaa basketball tournament&api-key=w5kLh4F33JzXtYmPepoAJMKFBcOUIEfm')
+    get_url('/svc/search/v2/articlesearch.json?q=ncaa basketball tournament&sort=newest')
   end
 
   def conn
