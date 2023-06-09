@@ -117,7 +117,7 @@ To get a local copy up and running follow these simple example steps.
     `rails s`
 
 6. Now go and open up to http://localhost:3000 in your browser
-7. Now go to: https://github.com/ithill22/draft_madness_fe and follow the Getting Started instructions in the README to start up the frontend application and enjoy the madness!
+7. Now go to: https://github.com/ithill22/draft_madness_fe#readme and follow the Getting Started instructions in the README to start up the frontend application and enjoy the madness!
 
 
 
